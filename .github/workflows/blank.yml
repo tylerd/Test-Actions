@@ -31,3 +31,12 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+
+    - name: Inline script error
+      run: throw 'this is an inline script error'
+      shell: pwsh
+
+    - name: Script file error
+      run: Script.ps1
+      shell: pwsh
+
