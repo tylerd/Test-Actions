@@ -39,4 +39,5 @@ jobs:
     - name: Script file error
       run: Script.ps1
       shell: pwsh
+      if: failure()
 
