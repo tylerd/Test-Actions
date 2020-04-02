@@ -41,6 +41,11 @@ jobs:
       shell: pwsh
       if: failure()
 
+    - name: Script file error - custom pwsh
+      run: .\Script.ps1
+      shell: pwsh -command ". '{0}'"
+      if: failure()
+
     - name: Script file error - powershell
       run: .\Script.ps1
       shell: powershell
