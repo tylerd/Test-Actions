@@ -36,12 +36,12 @@ jobs:
       run: throw 'this is an inline script error'
       shell: powershell
 
-    - name: Script file error
-      run: Script.ps1
+    - name: Script file error - pwsh
+      run: .\Script.ps1
       shell: pwsh
       if: failure()
 
-    - name: Script file error
-      run: Script.ps1
+    - name: Script file error - powershell
+      run: .\Script.ps1
       shell: powershell
       if: failure()
