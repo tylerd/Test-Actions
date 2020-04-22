@@ -31,6 +31,9 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: Pwsh version table
+      run: $PSVersionTable
+      shell: pwsh
 
     - name: Inline script error
       run: throw 'this is an inline script error'
@@ -40,4 +43,14 @@ jobs:
       run: ./Script.ps1
       shell: pwsh
       if: failure()
+
+    - name: Inline script NormalView error
+      run: $ErrorView = "NormalView"; throw 'this is an inline script error'
+      shell: pwsh
+      if: failure()
+
+    - name: NormalView Script file error
+      run: ./NormalViewScript.ps1
+      shell: pwsh
+      if: failure()  
 
